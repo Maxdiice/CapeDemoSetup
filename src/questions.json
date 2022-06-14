@@ -1,0 +1,258 @@
+{
+    "questionList": [
+        {
+            "title": "Let's get to know eachother. What kind of marketeer are you?",
+            "step": "0.5",
+            "description": "Select the situation that describes your marketing situation.",
+            "illustration": "unknown",
+            "type": "select",
+            "size": "big",
+            "previous": "Intro",
+            "answers": [
+                {   
+                    "key": "singleBrand",
+                    "title": "An in-house advertiser", 
+                    "description":"We manange the marketing within our company",
+                    "icon": "RocketLaunchIcon",
+                    "illustration": "singleBrand"
+                },
+                {   
+                    "key": "agency",
+                    "title": "An agency", 
+                    "description":"We manage the marketing for different companies",
+                    "icon": "CampaignIcon",
+                    "illustration": "agency"
+                }
+            ]
+        },
+        {
+            "title": "What brand are we going to launch first?",
+            "step": "1",
+            "description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
+            "type": "input",
+            "quantity": "single",
+            "illustration": "paint",
+            "previous": "Marketing situation",
+            "answers": [
+                {
+                    "label": "Brand Name",
+                    "type": "text",
+                    "width": "fullwidth"
+                }
+            ]
+        },
+        {
+            "title": "In what business sector is {brand} primarily active?",
+            "step": "1.5",
+            "description": "Select one business sector that fits {brand} the best. This is used to create the best possible campaigns for your brand.",
+            "illustration": "question",
+            "type": "sector",
+            "size": "small",
+            "previous": "Brand info",
+            "answers": [
+                {   
+                    "key": "travel",
+                    "title": "Travel", 
+                    "icon": "TravelExploreIcon",
+                    "illustration": "travel"
+                },
+                {   
+                    "key": "realEstate",
+                    "title": "Real estate", 
+                    "icon": "GiteIcon",
+                    "illustration": "realEstate"
+                },
+                {   
+                    "key": "automotive",
+                    "title": "Automotive", 
+                    "icon": "DirectionsCarIcon",
+                    "illustration": "automotive"
+                },
+                {   
+                    "key": "foodBeverages",
+                    "title": "Food & beverages", 
+                    "icon": "FastfoodIcon",
+                    "illustration": "foodBeverages"
+                },
+                {   
+                    "key": "homeLifestyle",
+                    "title": "Home & lifestyle", 
+                    "icon": "WeekendIcon",
+                    "illustration": "homeLifestyle"
+                },
+                {   
+                    "key": "sport",
+                    "title": "Sport", 
+                    "icon": "SportsSoccerIcon",
+                    "illustration": "sport"
+                },
+                {   
+                    "key": "telco",
+                    "title": "Telco", 
+                    "icon": "LeakAddIcon",
+                    "illustration": "telco"
+                },
+                {   
+                    "key": "fashion",
+                    "title": "Fashion", 
+                    "icon": "ShoppingBagIcon",
+                    "illustration": "fashion"
+                },
+                {   
+                    "key": "delivery",
+                    "title": "Delivery", 
+                    "icon": "DeliveryDiningIcon",
+                    "illustration": "delivery"
+                },
+                {   
+                    "key": "supermarket",
+                    "title": "Supermarket", 
+                    "icon": "LocalGroceryStoreIcon",
+                    "illustration": "supermarket"
+                }
+            ]
+        },
+        {
+            "title": "For what type of channels do you plan on creating automated campaigns?",
+            "description": "Select at least one channel you would like to create automated digital campaigns for?",
+            "step": "2",
+            "illustration": "megaphone",
+            "type": "multi",
+            "size": "big",
+            "format": "text",
+            "previous": "Brand sector",
+            "answers": [
+                {   
+                    "id": 0,
+                    "title": "Display channels",
+                    "tag": "display", 
+                    "description":"Create hundreds of data-driven ads at scale in seconds for all platforms of your choice",
+                    "icon": "DevicesIcon",
+                    "illustration": "display"
+                },
+                {
+                    "id": 1,
+                    "title": "Social channels",
+                    "tag": "social", 
+                    "description":"Create social content in a matter of seconds for all the platforms of your choice",
+                    "icon": "ShareIcon",
+                    "illustration": "socials"
+                },
+                {   
+                    "id": 2,
+                    "title": "Online video channels",
+                    "tag": "video", 
+                    "description":"Create smart, dynamic, fast and easisly scalable video ads that can be published or exported",
+                    "icon": "MovieFilterIcon",
+                    "illustration": "video"
+                }
+            ]
+        },
+        {
+            "Index": 4,
+            "title": "What channels does {brand} use or plan on using for their marketing?",
+            "description": "Select one or multiple channels that {brand} uses or plans on using for their creating digital campaigns.",
+            "step": "2.5",
+            "illustration": "socialmedia",
+            "type": "toggle",
+            "answerFormat": "small",
+            "previous": "Campaign channels",
+            "socialAnswers": [
+                {   
+                    "ID": 0,
+                    "title": "Meta for Business"
+                },
+                {   
+                    "ID": 1,
+                    "title": "Facebook"
+                },
+                {   
+                    "ID": 2,
+                    "title": "Instagram"
+                },
+                {   
+                    "ID": 3,
+                    "title": "YouTube"
+                },
+                {   
+                    "ID": 4,
+                    "title": "Snapchat"
+                },
+                {   
+                    "ID": 5,
+                    "title": "LinkedIN"
+                },
+                {   
+                    "ID": 6,
+                    "title": "TikTok"
+                },
+                {   
+                    "ID": 7,
+                    "title": "Pinterest"
+                },
+                {   
+                    "ID": 8,
+                    "title": "Twitter"
+                }
+            ],
+            "managementAnswers": [
+                {   
+                    "ID": 0,
+                    "title": "Campaign Manager 360"
+                },
+                {   
+                    "ID": 1,
+                    "title": "Google Ads"
+                },
+                {   
+                    "ID": 2,
+                    "title": "DV360"
+                }
+            ]
+        },
+        {
+            "title": "Your demo environment is ready!",
+            "description": "Enter your personal details so we can send you an email to enter your demo environment",
+            "type": "input",
+            "step": "3",
+            "illustration": "profile",
+            "quantity": "multiple",
+            "previous": "Campaign channels",
+            "answers": [
+                {   
+                    "key": 0,
+                    "label": "Full name",
+                    "type": "text",
+                    "width": "half"
+                },
+                {   
+                    "key": 1,
+                    "label": "E-mail",
+                    "type": "email",
+                    "width": "fullwidth"
+                },
+                {   
+                    "key": 2,
+                    "label": "Phonenumber",
+                    "type": "phonenumber",
+                    "width": "fullwidth"
+                },
+                {   
+                    "key": 3,
+                    "label": "Job title",
+                    "type": "text",
+                    "width": "fullwidth"
+                }
+            ]
+        },
+        {
+            "title": "You've received an entry mail {name}!",
+            "step": "4",
+            "description": "We've sent an email to {Email} with a link to acces your personal demo enviroment",
+            "type": "stepper",
+            "illustration": "confetti",
+            "previous": "account details"
+        }
+]
+
+}
