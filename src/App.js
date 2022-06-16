@@ -7,6 +7,7 @@ import Multi from "./components/multi/multi";
 import Sector from "./components/sector/sector";
 import Intro from "./components/intro/intro";
 import Stepper from "./components/stepper/stepper";
+import SendEntryEmail from "./components/email/email";
 import { useState } from "react";
 import questions from "./questions.json";
 import './App.css';
@@ -82,6 +83,7 @@ function App() {
         console.log(answers);
 
         setCurrentQuestion(currentQuestion + 1);
+
         if (highest > currentQuestion) {
             if (questions.questionList[currentQuestion + 1].type == 'select') {
                 setIllustration(answers[currentQuestion + 1])
@@ -158,6 +160,8 @@ function App() {
                 return selectedValue == null ? false : true
             case 'sector':
                 return sector.length > 0 ? true : false
+            case 'complete':
+                return SendEntryEmail(answers)
         }
     }
 

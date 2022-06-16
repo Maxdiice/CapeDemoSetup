@@ -268,8 +268,8 @@
         {
             "title": "You've received an entry mail {name}!",
             "step": "4",
-            "description": "We've sent an email to {Email} with a link to acces your personal demo enviroment",
-            "type": "stepper",
+            "description": "We've sent an email to {Email} with a link to acces your personal demo enviroment. (This in an test e-mail that will end in you spam-folder)",
+            "type": "complete",
             "illustration": "confetti",
             "previous": "account details"
         }
