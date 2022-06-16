@@ -27,16 +27,16 @@ function Stepper(props) {
                 <div style={{ transform: 'rotate(-30deg)'}} className={"stepper-background"}>
                     <SvgIcon component={GetSVG(props.illustration)} style={{width: "190px", height: "190px"}} inheritViewBox />
                     <div className="stepper-placement" style={{ transform: 'rotate(30deg)', width:350, height: 350}}>
-                        <div className={"offset-step " + checkStatus(0)} onClick={() => props.navigateQuestion(0)} />
+                        <div className={"offset-step " + checkStatus(0)} onClick={() => props.navigateQuestion(1)} />
                     </div>
                     <span className="stepper-placement" style={{ transform: 'rotate(-30deg)', width:350, height: 350}}>
-                        <div className={"offset-step" + checkStatus(1)} onClick={() => props.navigateQuestion(1)}/>
+                        <div className={"offset-step" + checkStatus(1)} onClick={() => props.navigateQuestion(2)}/>
                     </span>
                     <div className="stepper-placement" style={{ transform: 'rotate(-90deg)', width:350, height: 350}}>
-                        <div className={"offset-step" + checkStatus(2)} onClick={() => props.navigateQuestion(3)}/>
+                        <div className={"offset-step" + checkStatus(2)} onClick={() => props.navigateQuestion(4)}/>
                     </div>
                     <span className="stepper-placement" style={{ transform: 'rotate(-150deg)', width:350, height: 350}}>
-                        <div className={"offset-step" + checkStatus(3)} onClick={() => props.navigateQuestion(5)}/>
+                        <div className={"offset-step" + checkStatus(3)} onClick={() => props.navigateQuestion(6)}/>
                     </span>
                     <span className="stepper-placement" style={{ transform: 'rotate(-210deg)', width:350, height: 350}}>
                         <div className={"offset-step" + checkStatus(4)}/>

@@ -18,7 +18,7 @@ function ButtonStyled(props) {
             </Button>
         }
     }
-    if (props.currentQuestion === 6) {
+    if (props.currentQuestion === 7) {
         return;
     } else return (
         <>

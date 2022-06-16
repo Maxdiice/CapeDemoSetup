@@ -1,6 +1,26 @@
 {
     "questionList": [
         {
+            "title":"Setup your free demo account to explore the new way of digital marketing!",
+            "description": "In this demo you'll experience how you can bring your digital marketing to new levels! You'll explore the following topics:",
+            "type": "intro",
+            "illustration": "unknown",
+            "answers": [
+                {
+                    "title": "Scale and speed up your campaigns from weeks to hours",
+                    "icon": "boltIcon"
+                },
+                {
+                    "title": "Work together and manage projects in your own ecosystem",
+                    "icon": "groupsIcon"
+                },
+                {
+                    "title": "Upload campaigns to all your channels in one click",
+                    "icon": "uploadIcon"
+                }
+            ]
+        },
+        {
             "title": "Let's get to know eachother. What kind of marketeer are you?",
             "step": "0.5",
             "description": "Select the situation that describes your marketing situation.",
@@ -254,5 +274,4 @@
             "previous": "account details"
         }
 ]
-
 }

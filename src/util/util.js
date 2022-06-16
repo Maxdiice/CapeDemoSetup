@@ -14,6 +14,9 @@ import CampaignIcon from '@mui/icons-material/Campaign';
 import DevicesIcon from '@mui/icons-material/Devices';
 import ShareIcon from '@mui/icons-material/Share';
 import MovieFilterIcon from '@mui/icons-material/MovieFilter';
+import BoltIcon from '@mui/icons-material/Bolt';
+import GroupsIcon from '@mui/icons-material/Groups';
+import SendAndArchiveIcon from '@mui/icons-material/SendAndArchive';
 import { ReactComponent as DV360 } from '../assets/360DV.svg';
 import { ReactComponent as Facebook } from '../assets/Facebook.svg';
 import { ReactComponent as GCM360 } from '../assets/gm360.svg';
@@ -245,6 +248,15 @@ export default function getSVG(iconName) {
 
         case "MovieFilterIcon":
             return MovieFilterIcon
+
+        case "boltIcon":
+            return BoltIcon    
+
+        case "groupsIcon":
+            return GroupsIcon
+
+        case "uploadIcon":
+            return SendAndArchiveIcon
 
         default:
             return RocketLaunchIcon

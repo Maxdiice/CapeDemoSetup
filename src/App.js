@@ -5,6 +5,7 @@ import Input from "./components/textfield/textfield";
 import Toggle from "./components/toggle/toggle";
 import Multi from "./components/multi/multi";
 import Sector from "./components/sector/sector";
+import Intro from "./components/intro/intro";
 import Stepper from "./components/stepper/stepper";
 import { useState } from "react";
 import questions from "./questions.json";
@@ -24,7 +25,7 @@ function App() {
     const [inputsFilled, setInputsFilled] = useState([false, false, true, false])
     const [emailValidated, setEmailValidated] = useState(true);
     const [highest, setHighest] = useState(0);
-    const [illustration, setIllustration] = useState("unknown")
+    const [illustration, setIllustration] = useState("unknown");
 
     const [email, setEmail] = useState();
 
@@ -48,20 +49,33 @@ function App() {
 
     const submitAnswer = () => {
         const newAnswers = [...answers];
+        switch (currentQuestion) {
+            case 0:
 
-        if (currentQuestion === 3) {
-            newAnswers[currentQuestion] = channels;
-        } else if (currentQuestion === 2) {
-            newAnswers[currentQuestion] = sector;
-        } else if (currentQuestion === 4) {
-            newAnswers[currentQuestion] = contact;
-        } else if (currentQuestion === 1) {
-            newAnswers[currentQuestion] = formats;
-        } else if (currentQuestion === 5) {
-            newAnswers[currentQuestion] = inputs;
-        } else newAnswers[currentQuestion] = selectedValue;
+                break;
+            case 2:
+                newAnswers[currentQuestion - 1] = formats;
+                break;
+            case 3:
+                newAnswers[currentQuestion - 1] = sector;
+                break;
+            case 4:
+                newAnswers[currentQuestion - 1] = channels;
+                break;
+            case 5:
+                newAnswers[currentQuestion - 1] = contact;
+                break;
+            case 6:
+                newAnswers[currentQuestion - 1] = inputs;
+                break;
+            default:
+                newAnswers[currentQuestion - 1] = selectedValue;
+        }
 
-        setAnswers(newAnswers);
+        if (currentQuestion !== 0) {
+            setAnswers(newAnswers)
+        }
+
         if (currentQuestion > highest) {
             setHighest(currentQuestion)
         }
@@ -81,7 +95,7 @@ function App() {
         setCurrentQuestion(currentQuestion - 1)
 
         if (currentQuestion == 2) {
-            setIllustration('paint')
+            setIllustration('unknown')
         } else if (questions.questionList[currentQuestion - 1].type === 'select') {
             setIllustration(answers[currentQuestion - 1])
         } else setIllustration(questions.questionList[currentQuestion - 1].illustration)
@@ -110,9 +124,9 @@ function App() {
 
     //Toggle multiple answers
     const handleContact = (event) => {
-        if (!contact.includes(event.target.value)) {
-            setContact((contact) => [...contact, event.target.value])
-        } else setContact(contact.filter(newContacts => event.target.value !== newContacts))
+        if (!contact.includes(event)) {
+            setContact((contact) => [...contact, event])
+        } else setContact(contact.filter(newContacts => event !== newContacts))
         console.log(contact)
     };
 
@@ -132,6 +146,8 @@ function App() {
     //Check if answer picked
     const nextQuestion = (channels, selectedValue,) => {
         switch (question.type) {
+            case 'intro':
+                return true;
             case 'multi':
                 return channels.includes(true)
             case 'input':
@@ -181,6 +197,16 @@ function App() {
     // rendering the current question
     const renderQuestion = () => {
         switch (question.type) {
+            case 'intro': {
+                return question.answers.map(item => {
+                    return (
+                        <Intro
+                            questionTitle={item.title}
+                            icon={item.icon}
+                        />
+                    )
+                })
+            }
             case 'select':
                 return <div className={question.size == 'small' ? 'radio-grid' : ''}>
                     {question.answers.map(item => {
@@ -280,6 +306,7 @@ function App() {
     return (<>
         <a href="https://www.bycape.io"><Cape style={{ position: "absolute", margin: "24" }} href="bycape.io" /></a>
         <div className="box">
+
             <div className="question-container">
                 <Heading title={question.title} subtext={question.description} brandName={answers[1]} personInfo={answers[5]}></Heading>
                 <div className="margin-question" />
@@ -292,14 +319,19 @@ function App() {
                     currentQuestion={currentQuestion}
                 />
             </div>
-            <div className="stepper-container">
-                <Stepper
-                    currentQuestion={question.step}
-                    highest={highest}
-                    navigateQuestion={navigateBack}
-                    illustration={illustration}
-                />
-            </div>
+            {
+                !currentQuestion == 0 && (
+                    <div className={"stepper-container"} >
+                        <Stepper
+                            currentQuestion={question.step}
+                            highest={highest}
+                            navigateQuestion={navigateBack}
+                            illustration={illustration}
+                        />
+                    </div>
+                )
+            }
+
         </div>
     </>
     );

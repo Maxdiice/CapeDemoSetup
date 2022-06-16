@@ -1,0 +1,17 @@
+.container-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 55px;
+  color: red;
+}
+
+.container-info:first-child {
+  margin-top: -20px;
+}
+
+.icon svg {
+  width: 36px;
+  height: 36px;
+  color: magenta;
+}

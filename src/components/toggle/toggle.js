@@ -61,7 +61,7 @@ function Toggle(props) {
             <ToggleButton
               value={item.title}
               selected={props.contact.includes(item.title)}
-              onClick={props.onClick}
+              onClick={() => props.onClick(item.title)}
               sx={{ padding: '6px 8px' }}>
               <SvgIcon component={GetSVG(item.title)} inheritViewBox sx={{height:"32px", width:"32px", marginRight:"4px"}} />
               {item.title}
